@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
+    :root {
+  --primary: #FFCE00;
+  --secondary: #FE4880;
+  --dark: #212121;
+  --light: #F3F3F3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: montserrat, sans-serif;
+  width: 100%;
+  min-height: 60vh;
+  background-image: radial-gradient( circle farthest-corner at 50.7% 54%,  rgba(204,254,152,1) 0%, rgba(229,253,190,1) 92.4% );
+
+}
+
+.card {
+  margin: 100px auto 0;
+  width: 100%;
+  max-width: 400px;
+  height: 580px;
+  perspective: 1000px;
+  position: relative;
+  top: -60px;
+  bottom: -100px;
+}
+
+.card__inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card__inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card__face--front {
+  background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__face--front h2 {
+  color: #FFF;
+  font-size: 62px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.card__face--back {
+  background-color: rgb(207, 165, 86);
+  transform: rotateY(180deg);
+}
+
+.card__content {
+  width: 100%;
+  height: 100%;
+}
+
+.card__header {
+  position: relative;
+  padding: 30px 30px 40px;
+}
+
+.card__header:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+  z-index: -1;
+  border-radius: 0px 0px 50% 0px;
+}
+
+
+
+.card__body {
+  padding: 20px;
+}
+
+
+.card__body p {
+  color: var(--dark);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.photo{
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  border: 5px groove #FE4880;
+  outline: 6px ridge rgb(201, 40, 160);
+  border-radius: 15px;
+  background-repeat: space;
+
+}
+
+h1{
+    font-family: 'Hurricane', cursive;
+    font-size: 30px;
+    text-decoration: underline double rgb(3, 19, 245);
+    color: crimson;
+    /* margin-left: 30px; */
+    text-align: center;
+  }
+
+
+p.muted{
+  font-size: 40px;
+  color: rgb(113, 18, 132);
+  text-shadow: 2px 3px 1px rgb(242, 237, 243),
+               3px 5px rgb(89, 61, 95);
+  opacity: 0.8;
+  font-family: 'Passions Conflict', cursive;
+  /* margin-left: 50px; */
+  text-align: center;
+  font-weight: 600;
+
+}
+
+p.text{
+  font-family: 'Bebas Neue', cursive;
+  font-size: x-large;
+  color: rgba(190, 11, 110, 0.74);
+  text-shadow: rgb(139, 226, 248) 2px 2.8px;
+  margin-left: 20px;
+}
+
+
+@media only screen and (max-width: 395px) {
+  .photo{
+    width: 100%;
+    max-width: 310px;
+    margin-left: -5px;
+  }
+
+  .card{
+    width: 100%;
+    max-width: 360px;
+  }
+}
